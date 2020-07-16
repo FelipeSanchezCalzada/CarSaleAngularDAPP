@@ -1,0 +1,17 @@
+.form-card {
+    max-width: 400px;
+}
+
+.full-width-input{
+    width: 100%;
+}
+
+.disabled-spinner-color {
+    ::ng-deep .mat-progress-spinner, .mat-spinner {
+        circle {
+            stroke: black;
+        }
+    }
+}
+
+

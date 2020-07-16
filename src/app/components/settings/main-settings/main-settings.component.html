@@ -1,0 +1,19 @@
+<div style="width: 450px;">
+    <h1 style="color: red;">¡Detente insensato!</h1>
+    <p>
+        Una mala configuracion puede hacer que la aplicacion deje de funcionar. No toques nada si no estás seguro de lo que vas a hacer, los valores introducidos no serán validados. Los cambios se guardan automaticamente
+    </p>
+    <p>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Address del contrato</mat-label>
+            <input (input)="saveSettings()" [(ngModel)]="ContractAddress" matInput placeholder="Ej: 0xe807E682cFAa7E6e961D222Cd82444798c3E1605">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>ABI del contrato</mat-label>
+            <textarea (input)="saveSettings()" [(ngModel)]="ContractABI" matInput placeholder="" style="height: 300px;"></textarea>
+        </mat-form-field>
+    </p>
+</div>
+

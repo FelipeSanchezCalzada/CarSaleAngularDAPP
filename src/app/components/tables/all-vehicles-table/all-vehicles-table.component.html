@@ -1,0 +1,55 @@
+
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="owner">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Dueño </th>
+            <td mat-cell *matCellDef="let row"> {{row.owner}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="registration_ID">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Matricula </th>
+            <td mat-cell *matCellDef="let row"> {{row.registration_ID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="brand">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Marca </th>
+            <td mat-cell *matCellDef="let row"> {{row.brand}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="model">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
+            <td mat-cell *matCellDef="let row"> {{row.model}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio (ether) </th>
+            <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="vehicle_docs_id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero de chasis </th>
+            <td mat-cell *matCellDef="let row"> {{row.vehicle_docs_id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="seller">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Vendedor </th>
+            <td mat-cell *matCellDef="let row"> {{row.seller}} </td>
+        </ng-container>
+
+
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

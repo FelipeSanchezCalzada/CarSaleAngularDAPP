@@ -1,0 +1,16 @@
+<mat-form-field appearance="legacy" style="width: 100%">
+    <mat-label *ngIf="to.label && to.hideLabel !== true">
+        {{ to.label }}
+        <span *ngIf="to.required && to.hideRequiredMarker !== true" class="mat-form-field-required-marker">*</span>
+    </mat-label>
+    <input matInput
+           [id]="id"
+           [readonly]="to.readonly"
+           [type]="'number'"
+           [errorStateMatcher]="errorStateMatcher"
+           [formControl]="formControl"
+           [formlyAttributes]="field"
+           [tabindex]="to.tabindex || 0"
+           [placeholder]="to.placeholder">
+</mat-form-field>
+
